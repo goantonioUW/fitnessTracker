@@ -29,12 +29,10 @@ router.put("/api/workouts/:id", (req, res) =>{
     req.params.id,
     { $push: { exercises: req.body} },
     {new: true, runValidators: true }
-
-
 )
 .then( dbWorkouts =>{
   res.json(dbWorkouts);
-} )
+})
 .catch( err =>{
   res.status("401").json(err);
 })
@@ -42,7 +40,7 @@ router.put("/api/workouts/:id", (req, res) =>{
 });
 
 router.get("/api/workouts/range", (req, res)=>{
-  Workout.find()
+  Workout.find(req)
   .then(  dbWorkouts =>{
     res.json( dbWorkouts );
   })

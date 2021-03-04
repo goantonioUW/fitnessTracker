@@ -4,13 +4,13 @@ async function initWorkout() {
     if (lastWorkout) {
       document
         .querySelector("a[href='/exercise?']")
-        .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
+        .setAttribute("href", `/exercise?id=${lastWorkout}`);
   
       const workoutSummary = {
         date: formatDate(lastWorkout.day),
         totalDuration: lastWorkout.totalDuration,
         numExercises: lastWorkout.exercises.length,
-        ...tallyExercises(lastWorkout.exercises)
+        ...exerciseCount(lastWorkout.exercises)
       };
   
       renderWorkoutSummary(workoutSummary);
@@ -19,8 +19,8 @@ async function initWorkout() {
     }
   }
   
-  function tallyExercises(exercises) {
-    const tallied = exercises.reduce((acc, curr) => {
+  function exerciseCount(exercises) {
+    const totalCount = exercises.reduce((acc, curr) => {
       if (curr.type === "weights") {
         acc.totalWeight = (acc.totalWeight || 0) + curr.weight;
         acc.totalSets = (acc.totalSets || 0) + curr.sets;
@@ -28,9 +28,10 @@ async function initWorkout() {
       } else if (curr.type === "cardio") {
         acc.totalDistance = (acc.totalDistance || 0) + curr.distance;
       }
+      console.log(acc);
       return acc;
     }, {});
-    return tallied;
+    return totalCount;
   }
   
   function formatDate(date) {
@@ -50,11 +51,11 @@ async function initWorkout() {
     const workoutKeyMap = {
       date: "Date",
       totalDuration: "Total Workout Duration",
-      numExercises: "Exercises Performed",
+      numExercises: "Total Exercises",
       totalWeight: "Total Weight Lifted",
-      totalSets: "Total Sets Performed",
-      totalReps: "Total Reps Performed",
-      totalDistance: "Total Distance Covered"
+      totalSets: "Total Sets",
+      totalReps: "Total Reps",
+      totalDistance: "Total Miles"
     };
   
     Object.keys(summary).forEach(key => {
@@ -73,9 +74,9 @@ async function initWorkout() {
   
   function renderNoWorkoutText() {
     const container = document.querySelector(".workout-stats");
-    const p = document.createElement("p");
+    const p = document.createElement("h4");
     const strong = document.createElement("strong");
-    strong.textContent = "You have not created a workout yet!"
+    strong.textContent = "Create A Workout To Get STARTED!!!"
   
     p.appendChild(strong);
     container.appendChild(p);

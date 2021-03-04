@@ -43,6 +43,17 @@ function populateChart(data) {
   let bar = document.querySelector("#canvas2").getContext("2d");
   let pie = document.querySelector("#canvas3").getContext("2d");
   let pie2 = document.querySelector("#canvas4").getContext("2d");
+  
+  let totalDuration = durations.reduce(function(a, b){
+    return a + b;
+    }, 0);
+
+    let totalPounds = pounds.reduce(function(a, b){
+        return a + b;
+        }, 0);
+
+
+
 
   let lineChart = new Chart(line, {
     type: "line",
@@ -58,7 +69,7 @@ function populateChart(data) {
       ],
       datasets: [
         {
-          label: "Min",
+          label: totalDuration + " min",
           backgroundColor: "red",
           borderColor: "red",
           data: durations,
@@ -66,11 +77,11 @@ function populateChart(data) {
         }
       ]
     },
-    
+
     options: {
         title: {
           display: true,
-          text: "Total Workout Time (Min)"
+          text: "Total Workout Time",
         },
       scales: {
         xAxes: [
@@ -107,7 +118,7 @@ function populateChart(data) {
       ],
       datasets: [
         {
-          label: "Pounds",
+          label: totalPounds +" Lbs",
           data: pounds,
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
@@ -195,7 +206,7 @@ function duration(data) {
       durations.push(exercise.duration);
     });
   });
-
+  console.log(durations)
   return durations;
 }
 
