@@ -48,12 +48,11 @@ function populateChart(data) {
     return a + b;
     }, 0);
 
-    let totalPounds = pounds.reduce(function(a, b){
-        return a + b;
-        }, 0);
+    // console.log(pounds)
 
-
-
+ let totalPounds = pounds.reduce(function (s, v) { 
+        return s + (v || 0); 
+    }, 0);
 
   let lineChart = new Chart(line, {
     type: "line",
@@ -69,9 +68,9 @@ function populateChart(data) {
       ],
       datasets: [
         {
-          label: totalDuration + " min",
-          backgroundColor: "red",
-          borderColor: "red",
+          label: totalDuration + " Min",
+          backgroundColor: "green",
+          borderColor: "green",
           data: durations,
           fill: false
         }
@@ -118,10 +117,10 @@ function populateChart(data) {
       ],
       datasets: [
         {
-          label: totalPounds +" Lbs",
+          label: totalPounds + " Lbs",
           data: pounds,
           backgroundColor: [
-            "rgba(255, 99, 132, 0.2)",
+            "blue",
             "rgba(54, 162, 235, 0.2)",
             "rgba(255, 206, 86, 0.2)",
             "rgba(75, 192, 192, 0.2)",
@@ -129,7 +128,7 @@ function populateChart(data) {
             "rgba(255, 159, 64, 0.2)"
           ],
           borderColor: [
-            "rgba(255, 99, 132, 1)",
+            "blue",
             "rgba(54, 162, 235, 1)",
             "rgba(255, 206, 86, 1)",
             "rgba(75, 192, 192, 1)",
@@ -206,7 +205,7 @@ function duration(data) {
       durations.push(exercise.duration);
     });
   });
-  console.log(durations)
+//   console.log(durations)
   return durations;
 }
 
