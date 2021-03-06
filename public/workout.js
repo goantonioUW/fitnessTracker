@@ -3,6 +3,7 @@ async function initWorkout() {
     // console.log("Last workout:", lastWorkout);
     if (lastWorkout) {
       document
+      // need to fix line 37 in the index.html
         .querySelector("a[href='/exercise?']")
         .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
   
@@ -83,3 +84,4 @@ async function initWorkout() {
   }
   
   initWorkout();
+  
