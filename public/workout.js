@@ -1,6 +1,6 @@
 async function initWorkout() {
-    const lastWorkout = await API.getLastWorkout();
-    console.log("Last workout:", lastWorkout);
+    let lastWorkout = await API.getLastWorkout();
+    // console.log("Last workout:", lastWorkout);
     if (lastWorkout) {
       document
         .querySelector("a[href='/exercise?']")
@@ -12,7 +12,7 @@ async function initWorkout() {
         numExercises: lastWorkout.exercises.length,
         ...exerciseCount(lastWorkout.exercises)
       };
-  
+
       renderWorkoutSummary(workoutSummary);
     } else {
       renderNoWorkoutText()
