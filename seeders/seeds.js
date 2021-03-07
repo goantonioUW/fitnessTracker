@@ -1,14 +1,11 @@
 let mongoose = require("mongoose");
-const db = require("./models");
+const db = require("../models");
 
-mongoose.connect("mongodb://localhost/workout", {
-    useUrlParser: true,
-    useFindAndModify: false
-});
+mongoose.connect("mongodb+srv://Antonio-admin:passw0rd@cluster0.ahew4.mongodb.net/workout?retrywrites=true&w=majority" || "mongodb://localhost/workout");
 
 let workoutSeed = [
 {
-        day: new Date(new Date().setDate()(new Date().getDate() - 10)),
+        day: new Date(new Date().setDate(new Date().getDate() - 10)),
         exercises: [ 
         {
             type: "push",
@@ -20,7 +17,7 @@ let workoutSeed = [
     ]
 },
 {
-    day: new Date(new Date().setDate()(new Date().getDate() - 10)),
+    day: new Date(new Date().setDate(new Date().getDate() - 10)),
     exercises: [ 
     {
         type: "push",
@@ -32,7 +29,7 @@ let workoutSeed = [
 ]
 },
 {
-    day: new Date(new Date().setDate()(new Date().getDate() - 10)),
+    day: new Date(new Date().setDate(new Date().getDate() - 10)),
     exercises: [ 
     {
         type: "push",
@@ -43,7 +40,7 @@ let workoutSeed = [
     }
 ]
 },
-{        day: new Date(new Date().setDate()(new Date().getDate() - 10)),
+{        day: new Date(new Date().setDate(new Date().getDate() - 10)),
     exercises: [ 
     {
         type: "pull",
@@ -53,7 +50,7 @@ let workoutSeed = [
         sets: 5
     }
 ]},
-{        day: new Date(new Date().setDate()(new Date().getDate() - 10)),
+{        day: new Date(new Date().setDate(new Date().getDate() - 10)),
     exercises: [ 
     {
         type: "pull",
@@ -64,7 +61,7 @@ let workoutSeed = [
     }
 ]
 },
-{        day: new Date(new Date().setDate()(new Date().getDate() - 10)),
+{        day: new Date(new Date().setDate(new Date().getDate() - 10)),
     exercises: [ 
     {
         type: "pull",
@@ -75,7 +72,7 @@ let workoutSeed = [
     }
 ]
 },
-{        day: new Date(new Date().setDate()(new Date().getDate() - 10)),
+{        day: new Date(new Date().setDate(new Date().getDate() - 10)),
     exercises: [ 
     {
         type: "push",
@@ -86,7 +83,7 @@ let workoutSeed = [
     }
 ]
 },
-{        day: new Date(new Date().setDate()(new Date().getDate() - 10)),
+{        day: new Date(new Date().setDate(new Date().getDate() - 10)),
     exercises: [ 
     {
         type: "pull",
