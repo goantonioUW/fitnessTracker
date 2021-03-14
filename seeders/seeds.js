@@ -12,7 +12,9 @@ let workoutSeed = [
             name: "Bench Press",
             weight: 250,
             reps: 8,
-            sets: 5
+            sets: 5,
+            duration: 15
+
         }
     ]
 },
@@ -24,7 +26,9 @@ let workoutSeed = [
         name: "Military Press",
         weight: 45,
         reps: 8,
-        sets: 5
+        sets: 5,
+        duration: 15
+
     }
 ]
 },
@@ -36,7 +40,9 @@ let workoutSeed = [
         name: "Pushups",
         weight: 45,
         reps: 8,
-        sets: 5
+        sets: 5,
+        duration: 15
+
     }
 ]
 },
@@ -47,7 +53,9 @@ let workoutSeed = [
         name: "Pull Ups",
         weight: 45,
         reps: 8,
-        sets: 5
+        sets: 5,
+        duration: 15
+
     }
 ]},
 {        day: new Date(new Date().setDate(new Date().getDate() - 10)),
@@ -57,7 +65,9 @@ let workoutSeed = [
         name: "lat pulldowns",
         weight: 145,
         reps: 8,
-        sets: 5
+        sets: 5,
+        duration: 15
+
     }
 ]
 },
@@ -68,7 +78,9 @@ let workoutSeed = [
         name: "rows",
         weight: 200,
         reps: 8,
-        sets: 5
+        sets: 5,
+        duration: 15
+
     }
 ]
 },
@@ -79,7 +91,9 @@ let workoutSeed = [
         name: "squats",
         weight: 250,
         reps: 5,
-        sets: 5
+        sets: 5,
+        duration: 15
+
     }
 ]
 },
@@ -90,7 +104,9 @@ let workoutSeed = [
         name: "deadlifts",
         weight: 250,
         reps: 8,
-        sets: 5
+        sets: 5,
+        duration: 15
+
     }
 ]
 }
