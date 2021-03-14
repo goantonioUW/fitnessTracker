@@ -43,16 +43,6 @@ function populateChart(data) {
   let bar = document.querySelector("#canvas2").getContext("2d");
   let pie = document.querySelector("#canvas3").getContext("2d");
   let pie2 = document.querySelector("#canvas4").getContext("2d");
-  
-  let totalDuration = durations.reduce(function(a, b){
-    return a + b;
-    }, 0);
-
-    // console.log(pounds)
-
- let totalPounds = pounds.reduce(function (s, v) { 
-        return s + (v || 0); 
-    }, 0);
 
   let lineChart = new Chart(line, {
     type: "line",
@@ -68,20 +58,19 @@ function populateChart(data) {
       ],
       datasets: [
         {
-          label: totalDuration + " Min",
-          backgroundColor: "green",
-          borderColor: "green",
+          label: "Workout Duration In Minutes",
+          backgroundColor: "red",
+          borderColor: "red",
           data: durations,
           fill: false
         }
       ]
     },
-
     options: {
-        title: {
-          display: true,
-          text: "Total Workout Time",
-        },
+      responsive: true,
+      title: {
+        display: true
+      },
       scales: {
         xAxes: [
           {
@@ -117,10 +106,10 @@ function populateChart(data) {
       ],
       datasets: [
         {
-          label: totalPounds + " Lbs",
+          label: "Pounds",
           data: pounds,
           backgroundColor: [
-            "blue",
+            "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",
             "rgba(255, 206, 86, 0.2)",
             "rgba(75, 192, 192, 0.2)",
@@ -128,7 +117,7 @@ function populateChart(data) {
             "rgba(255, 159, 64, 0.2)"
           ],
           borderColor: [
-            "blue",
+            "rgba(255, 99, 132, 1)",
             "rgba(54, 162, 235, 1)",
             "rgba(255, 206, 86, 1)",
             "rgba(75, 192, 192, 1)",
@@ -142,7 +131,7 @@ function populateChart(data) {
     options: {
       title: {
         display: true,
-        text: "Total Weight Lifted (pounds)"
+        text: "Pounds Lifted"
       },
       scales: {
         yAxes: [
@@ -205,7 +194,7 @@ function duration(data) {
       durations.push(exercise.duration);
     });
   });
-//   console.log(durations)
+
   return durations;
 }
 
