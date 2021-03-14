@@ -8,6 +8,6 @@ User workouts are stored in mongoDB.
 ![resistance](images/resistance.png)
 ![dashboard](images/dashboard.png)
 
-## This is the link to the live link
+## Click below for the live deployment
 
 [![screenshot](images/homepage.png)](https://my-workout-app1.herokuapp.com/?id=604e6b7e5da03181c46b526b)
