@@ -8,4 +8,4 @@ User workouts are stored in mongoDB.
 
 ## This is the link to the live link
 
-![Fitness Tracker](https://my-workout-app1.herokuapp.com/?id=604e6b7e5da03181c46b526b)
+(https://my-workout-app1.herokuapp.com/?id=604e6b7e5da03181c46b526b)
