@@ -4,7 +4,9 @@ This app allows users to create new workouts and add to existing workouts. Once 
 User workouts are stored in mongoDB.
 
 ## These are some screenshots of the app
-![Screenshot](../main/images/cardio.png)
+![Cardio](images/cardio.png)
+![resistance](images/resistance.png)
+![dashboard](images/dashboard.png)
 
 ## This is the link to the live link
 
