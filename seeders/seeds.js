@@ -13,7 +13,7 @@ let workoutSeed = [
             weight: 250,
             reps: 8,
             sets: 5,
-            duration: 15
+            duration: 30
 
         }
     ]
@@ -27,7 +27,7 @@ let workoutSeed = [
         weight: 45,
         reps: 8,
         sets: 5,
-        duration: 15
+        duration: 55
 
     }
 ]
@@ -41,7 +41,7 @@ let workoutSeed = [
         weight: 45,
         reps: 8,
         sets: 5,
-        duration: 15
+        duration: 5
 
     }
 ]
@@ -54,7 +54,7 @@ let workoutSeed = [
         weight: 45,
         reps: 8,
         sets: 5,
-        duration: 15
+        duration: 85
 
     }
 ]},
@@ -66,7 +66,7 @@ let workoutSeed = [
         weight: 145,
         reps: 8,
         sets: 5,
-        duration: 15
+        duration: 19
 
     }
 ]
@@ -79,7 +79,7 @@ let workoutSeed = [
         weight: 200,
         reps: 8,
         sets: 5,
-        duration: 15
+        duration: 3
 
     }
 ]
@@ -92,7 +92,7 @@ let workoutSeed = [
         weight: 250,
         reps: 5,
         sets: 5,
-        duration: 15
+        duration: 24
 
     }
 ]
